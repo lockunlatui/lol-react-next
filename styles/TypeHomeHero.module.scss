@@ -1,0 +1,175 @@
+@import "@/styles/variables.module.scss";
+@import "@/styles/mixins.module.scss";
+
+.typeHomeHero {
+  & > section {
+    box-sizing: border-box;
+    position: relative;
+    min-height: 31.25rem;
+    padding: 3.75rem;
+  }
+}
+
+.backgroundWrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  background: #07121a;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: #07121a;
+
+  & > video {
+    object-fit: cover;
+    object-position: center top;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.poster {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: block;
+  animation: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s 1 normal forwards
+    running kMdpOt;
+
+  & > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.foreBackgroundWrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  max-width: 105rem;
+  height: 55vh;
+  min-height: 31.25rem;
+  margin: 0px auto;
+}
+
+.foreGroundVideoWrapper {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: #07121a;
+}
+
+.containerCanvas {
+  position: absolute;
+  inset: 1px;
+  pointer-events: none;
+
+  & > canvas {
+    position: absolute;
+    display: block;
+  }
+}
+
+.foreGroundInner {
+  width: 100%;
+}
+
+.foreGroundRow {
+  width: 100%;
+  margin-top: 0.625rem;
+  text-align: center;
+}
+
+.logo {
+  display: inline-block;
+  position: relative;
+  width: 40vw;
+  height: calc(17.6333vw);
+  max-width: 37.5rem;
+  max-height: 16.5312rem;
+
+  & > img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    animation: 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s 1 normal backwards
+      running lbWRkT;
+  }
+}
+
+.anchor {
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  min-width: 195px;
+  height: 56px;
+  padding: 0px;
+  margin: 5px;
+  color: #010101;
+  font-size: 0.8125rem;
+  letter-spacing: 0.15em;
+  font-weight: bold;
+  background-color: transparent;
+  border: 0px;
+}
+
+.inner {
+  @include flex-center;
+  box-sizing: border-box;
+  position: relative;
+  min-width: 195px;
+  height: 56px;
+  padding: 0px 40px;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+}
+
+.container {
+  position: absolute;
+  inset: 1px;
+  pointer-events: none;
+}
+
+.revealWrapper {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  background-color: #0bc6e3;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  min-width: 195px;
+  height: 56px;
+  transition: background-color 200ms ease 0s, opacity 0.01s ease 400ms;
+}

@@ -1,0 +1,458 @@
+@import "@/styles/variables.module.scss";
+@import "@/styles/mixins.module.scss";
+
+.riotBarHeader {
+  background-color: $black;
+  font-weight: bold;
+  height: 80px;
+  display: flex;
+  z-index: 3000000;
+  position: relative;
+  width: 100%;
+}
+
+.riotBarLeftContent {
+  padding-left: 36px;
+  display: flex;
+
+  @include table {
+    padding-left: 16px;
+  }
+}
+
+.riotBrandingSwitcher {
+  @include flex-center;
+  height: 80px;
+}
+
+.riotBarLogo {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    .riotFirstLogo,
+    .riotBarAppSwitcherTriggerArrow {
+      fill: $red;
+    }
+  }
+}
+
+.riotFirstLogo {
+  width: 75px;
+  height: 24px;
+  fill: $white;
+  margin: 0;
+
+  @include table {
+    width: 95px;
+    height: 32px;
+  }
+}
+
+.riotBarAppSwitcherTriggerArrow {
+  margin-left: 12px;
+  fill: $icon-color;
+
+  @include table {
+    & > svg {
+      width: 14px;
+      height: 7px;
+    }
+  }
+}
+
+/** Bar Center */
+.riotBarCenter {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.riotBarDesktopLogoOuter {
+  height: 80px;
+  @include flex-center;
+  margin-left: 22px;
+
+  a {
+    min-width: 38px;
+
+    svg {
+      max-height: 26px;
+    }
+  }
+}
+
+.riotBarDesktopNavigationWrapper {
+  opacity: 1;
+  margin-left: 18px;
+  transition: opacity ease 0.3s;
+  width: 100%;
+  height: 80px;
+}
+
+.riotThemeLogoMobile {
+  @include flex-column-justify-center;
+  width: auto;
+  margin-left: 28px;
+
+  & > a {
+    & > svg {
+      display: block;
+      margin: auto;
+      height: 40px;
+    }
+  }
+}
+
+.desktopLinkItem {
+  display: inline-flex;
+  height: 80px;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    a {
+      p {
+        background-color: rgba($color: $bg-hover, $alpha: 0.3);
+        border-radius: 6.4px;
+      }
+
+      .desktopLinkItemUnderline {
+        background-color: $underline-item;
+        height: 4px;
+        position: absolute;
+        bottom: 7px;
+        width: 100%;
+      }
+
+      ul {
+        opacity: 1;
+        visibility: visible;
+        display: block;
+        transition: opacity 0.5s cubic-bezier(0.06, 0.81, 0, 0.98) 0s,
+          visibility 0s;
+      }
+    }
+  }
+
+  a {
+    @include text-13(600, $white);
+    @include flex-column-justify-center;
+    height: 66px;
+    line-height: 120%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: auto;
+
+    p {
+      padding: 7.5px 16px;
+      text-align: center;
+      margin-right: 4px;
+
+      svg {
+        margin-left: 5px;
+        margin-bottom: 1px;
+      }
+    }
+  }
+}
+
+.desktopLinkItemIconLinkOut {
+  vertical-align: middle;
+
+  & > svg {
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    display: inline-block;
+  }
+}
+
+.subMenuWrapper {
+  @include reset-list;
+  opacity: 1;
+  position: absolute;
+  top: 69px;
+  background-color: $black-2;
+  left: 0px;
+  box-shadow: 0px 4px 16px 0px rgba($color: $black-1, $alpha: 0.2);
+  visibility: hidden;
+  min-width: 215px;
+  text-align: left;
+  border-radius: 0 0 2px 2px;
+}
+
+.subMenuItem {
+  margin: 5px 16px;
+  margin-top: 16px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($color: $bg-hover, $alpha: 0.3);
+    border-radius: 6.4px;
+
+    & > span {
+      color: $white-1;
+    }
+  }
+
+  span {
+    @include text-13(500, $brown);
+    padding: 8px 16px;
+    border: none;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 16px;
+    width: 100%;
+    display: block;
+  }
+}
+
+.subMenuUnderline {
+  background-color: $underline-item;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px 2px 0px 0px;
+}
+
+/** Bar Right */
+.riotBarRightContent {
+  display: flex;
+  padding-right: 32px;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include table {
+    padding-right: 16px;
+  }
+}
+
+.riotBarLocaleSwitcher {
+  @include flex-center-around;
+  position: relative;
+  height: 100%;
+}
+
+.localeSwitcherIcon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+
+  @include table {
+    width: 48px;
+    height: 48px;
+    margin: 0 12px 0 8px;
+  }
+
+  & > a {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    border-radius: 6.4px;
+    padding: 0;
+
+    @include table {
+      width: 48px;
+      height: 48px;
+    }
+
+    &:hover {
+      background-color: rgba($color: $bg-hover, $alpha: 0.2);
+    }
+
+    & > svg {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      margin: auto;
+      width: 16px;
+      height: 16px;
+
+      @include table {
+        top: 12px;
+        left: 12px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.riotBarMenuIcon {
+  display: block;
+  visibility: visible;
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+}
+
+.riotBarAccountReset {
+  @include flex-center;
+}
+
+.riotBarAccountAnonymousLinkWrapper {
+  display: inline-block;
+  padding: 0 6px;
+
+  & > a {
+    background: linear-gradient(315deg, $blue 0%, $blue-1 100%);
+    text-align: center;
+    line-height: 16px;
+    border-radius: 12px;
+    padding: 8px 16px;
+    color: $black;
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+}
+
+/** CSS Open Menu */
+.riotMobileMenuOverlay {
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: $black-1, $alpha: 0.6);
+}
+
+.riotBarMobileMenu {
+  background-color: $black-3;
+  box-shadow: 0px 4px 16px 0px rgba($color: $black-1, $alpha: 0.2);
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: scroll;
+  position: fixed;
+  height: 100%;
+  text-align: left;
+  transform: translateY(5%);
+  top: 0px;
+  right: 0;
+  width: 484px;
+  z-index: 10;
+  transition: transform 300ms, opacity 300ms;
+}
+
+.visible {
+  visibility: visible;
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.riotBarMobileMenuHeader {
+  @include flex-center-between;
+  height: 80px;
+  background-color: $black-3;
+  padding: 16px;
+}
+
+.mobileMenuHeaderLogo {
+  color: $white;
+  margin: 0;
+  display: block;
+  max-width: 40px;
+
+  & > svg {
+    height: 40px;
+  }
+}
+
+.riotBarMobileMenuHeaderButtonClose {
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+}
+
+.riotBarMobileMenuTouchPoints {
+  transition: opacity 0.2s linear;
+  padding-top: 7px;
+}
+
+.riotBarMobileMenuTouchPoint {
+  overflow: visible;
+  position: relative;
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 0;
+
+  & > a {
+    @include flex-center-between;
+    @include text-16(600, $white);
+    text-decoration: none;
+    padding-left: 18px;
+    padding-right: 18px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    height: 48px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 8px 16px;
+    transition: color 1s cubic-bezier(0.06, 0.81, 0, 0.98);
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba($color: $bg-hover, $alpha: 0.2);
+      border-radius: 6.4px;
+    }
+  }
+}
+
+.mobileMenuIconArrow {
+  width: 28px px;
+  height: 14px;
+  transform: rotate(90deg);
+  transition: transform 0.2s linear;
+
+  & > svg {
+    display: block;
+    fill: $brown-1;
+    width: 28px;
+    height: 14px;
+  }
+}
+
+.mobileMenuIconLink {
+  width: 28px;
+  height: 14px;
+
+  & > svg {
+    display: block;
+    fill: $brown-1;
+    width: 28px;
+    height: 14px;
+  }
+}
+
+.riotBarMobileMenuAnonymousLinkWrapper {
+  width: 100%;
+  transition: opacity 0.2s linear;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.riotbarMobileMenuAnonymousLink {
+  @include flex-center;
+  @include text-16(600, $black);
+  background: $blue;
+  text-align: center;
+  line-height: 120%;
+  position: relative;
+  z-index: 0;
+  text-overflow: ellipsis;
+  height: 48px;
+  border-radius: 12px;
+  padding: 8px 16px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: color 1s;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
